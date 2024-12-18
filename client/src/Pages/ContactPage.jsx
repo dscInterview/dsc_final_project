@@ -5,7 +5,7 @@ import * as yup from 'yup';
 
 // Yup validation schema
 const schema = yup.object({
-  prompt: yup.string().required('Prompt is required').min(5, 'Prompt should be at least 5 characters')
+  prompt: yup.string().required('Prompt is required')
 }).required();
 
 const ContactPage = () => {
@@ -25,8 +25,8 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="h-auto flex justify-center items-start bg-transparent"> {/* Adjusted height to 90vh */}
-      <div className="relative w-full sm:w-4/5 md:w-3/4 lg:w-2/3 px-6 py-6 mt-24"> {/* Increased width to sm:w-4/5 */}
+    <div className="h-auto flex justify-center items-start bg-transparent"> 
+      <div className="relative w-full sm:w-4/5 md:w-3/4 lg:w-2/3 px-6 py-6 mt-24"> 
         {/* Centered Heading */}
         <h2 className="text-2xl text-white mb-4 font-semibold text-center">What can I help with?</h2>
         

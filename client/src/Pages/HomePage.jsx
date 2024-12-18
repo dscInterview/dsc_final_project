@@ -8,7 +8,6 @@ const Homepage = () => {
 
   const handleSearchClick = () => {
     if (searchQuery.trim() !== "") {
-      // Simulate fetching data based on the search query
       setData({
         image: "https://via.placeholder.com/300",
         description:
@@ -22,8 +21,8 @@ const Homepage = () => {
   };
 
   const renderStars = (rating) => {
-    // Rating can range from 0 to 5
     const stars = [];
+    // we  have 4.5 means untill 4 its true later it comes to that half rating
     for (let i = 1; i <= 5; i++) {
       if (rating >= i) {
         stars.push(<FaStar key={i} className="text-yellow-500" />);
@@ -38,7 +37,7 @@ const Homepage = () => {
 
   return (
     <div className="relative w-full min-h-auto bg-transparent text-white">
-      {/* Before Clicking: Search Bar and Button */}
+      {/* Before Clicking The Search Button For Web Scrapping */}
       <div className="flex justify-center items-center w-10/12 mx-auto h-24 mt-12">
         <div className="flex items-center w-full max-w-3xl p-4 rounded-md">
           <input
@@ -58,7 +57,8 @@ const Homepage = () => {
         </div>
       </div>
 
-      {/* After Clicking: Show Details in Row Layout */}
+      {/* after Clicking */}
+
       {searchClicked && data && (
         <div className="flex flex-col md:flex-row justify-center mx-auto p-6 mt-12 w-10/12">
           {/* Image */}
@@ -70,17 +70,16 @@ const Homepage = () => {
             />
           </div>
 
-          {/* Product Details (Description, Ratings, Price, and Buy Now Button) */}
           <div className="flex flex-col md:w-1/2 justify-center md:items-start text-center md:text-left">
             <h2 className="text-xl font-bold mb-4">{data?.description}</h2>
 
-            {/* Ratings with Stars and Rating Number */}
-            <div className="flex items-center mb-6"> {/* Increased margin-bottom for more space */}
+            {/* Super star rating */}
+            <div className="flex items-center mb-6"> 
               {renderStars(data?.ratings)}
               <span className="ml-2 text-yellow-500 text-lg font-semibold">{data?.ratings}</span>
             </div>
 
-            {/* Price and Buy Now Button */}
+           
             <div className="flex justify-between items-center mb-8 space-x-8"> {/* Increased margin-bottom and space between price and button */}
               <p className="text-lg font-bold">{data?.price}</p>
               <a

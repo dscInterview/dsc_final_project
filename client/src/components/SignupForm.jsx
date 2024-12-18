@@ -41,8 +41,7 @@ const SignupForm = () => {
   const onSubmit = async (data) => {
     const payload = {
       name: data.name,
-      email: selectedField === "email" ? data.identifier : "",
-      phone: selectedField === "phone" ? data.identifier : "",
+      identifier: data.identifier,
       password: data.password,
     };
 
