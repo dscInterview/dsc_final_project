@@ -37,7 +37,7 @@ const Navbar = ({ isLogged, setIsLogged }) => {
   const activeLink = getActiveLink();
 
   return (
-    <nav className="flex items-center justify-between px-6 py-4">
+    <nav className="flex items-center justify-between px-6 py-4 ml-10 mr-10">
       <div className="text-2xl font-bold">
         <Link to="/" className="text-white">Logo</Link>
       </div>
